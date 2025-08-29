@@ -21,7 +21,6 @@ function setInnerText (value) {
     const availableStar = document.getElementById(`star`)
     availableStar.innerText = value
 }
-
 // heart increase
 const hearts =document.getElementsByClassName(`heart`)
 for(const heart of hearts){
@@ -29,18 +28,17 @@ for(const heart of hearts){
         heartValueIncrease ()
     })
 }
-
 // copy
 const copyBtn =document.getElementsByClassName(`copy`)
 for(const btn of copyBtn){
     btn.addEventListener(`click`,function(){
         const parent =this.closest(`.item`);
         const number =parent.querySelector(`.number`).innerText;
+        navigator.clipboard.writeText(number);
         alert(`Number Has Been Copied: ${number}`)
         copyValueIncrease ()
     })
 }
-
 // history and call
 const callBtn = document.getElementsByClassName(`call`)
 const historyParent =document.getElementById(`history-parent`)
